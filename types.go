@@ -8,12 +8,14 @@ const (
 	// APIBaseSandBox points to the sandbox (for testing) version of the API
 	APIBaseSandBox = "https://demo.windcave.com"
 	// APIBaseLive points to the live version of the API
-	APIBaseLive = " https://sec.windcave.com"
+	APIBaseLive = "https://sec.windcave.com"
 )
 
 type PaymentMethod string
 
 type CurrencyType string
+
+type ClientType string
 
 type (
 	// Client represents a Paypal REST API Client
@@ -21,26 +23,39 @@ type (
 		Client      *http.Client
 		PxPayUserId string
 		PxPayKey    string
+		APIBase     string
 	}
 
 	Purchase struct {
-		MechantReference
-		AmountInput
-		CurrencyInput
+		MechantReference string
+		Amount           Amount
+		BillingId        string
+		EmailAddress     string
+		Txn              Txn
+		UrlSuccess       string
+		UrlFail          string
 	}
 
 	Auth struct {
 	}
 
 	Txn struct {
-		TxnData1
-		TxnData2
-		TxnData3
-		TxnId
+		TxnData1 string
+		TxnData2 string
+		TxnData3 string
+		TxnId    string
 	}
 
 	Amount struct {
-		AmountInput
-		CurrencyInput
+		AmountInput   string
+		CurrencyInput CurrencyType
+	}
+
+	Transcation struct {
+		Result string
+	}
+
+	ProcessResponse struct {
+		Response string
 	}
 )

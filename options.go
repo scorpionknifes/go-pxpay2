@@ -36,3 +36,8 @@ const (
 	NZD CurrencyType = "NZD" //New Zealand Dollar
 	WST CurrencyType = "WST" //Samoan Tala
 )
+
+const (
+	Internet ClientType = "I"
+	//Recurring ClientType = "R" // NOT SUPPORTED
+)
