@@ -13,12 +13,12 @@ c, err := pxpay2.NewClient("PxPayUserID", "PxPayKey", pxpay2.APIBaseLive)
 
 ```go
 // Config Purchase
-p := Purchase{
+p := pxpay2.Purchase{
     MechantReference: "test",
-    Amount:           Amount{AmountInput: "1.00", CurrencyInput: NZD},
+    Amount:           pxpay2.Amount{pxpay2.AmountInput: "1.00", pxpay2.CurrencyInput: NZD},
     BillingId:        "test",
     EmailAddress:     "name@email.com",
-    Txn:              Txn{"", "", "", ""},
+    Txn:              pxpay2.Txn{"", "", "", ""},
     UrlSuccess:       "https://demo.windcave.com/SandboxSuccess.aspx",
     UrlFail:          "https://demo.windcave.com/SandboxSuccess.aspx",
 }
