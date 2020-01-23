@@ -15,7 +15,7 @@ c, err := pxpay2.NewClient("PxPayUserID", "PxPayKey", pxpay2.APIBaseLive)
 // Config Purchase
 p := pxpay2.Purchase{
     MechantReference: "test",
-    Amount:           pxpay2.Amount{AmountInput: "1.00", CurrencyInput: NZD},
+    Amount:           pxpay2.Amount{AmountInput: "1.00", CurrencyInput: pxpay2.NZD},
     BillingId:        "test",
     EmailAddress:     "name@email.com",
     Txn:              pxpay2.Txn{"", "", "", ""},
