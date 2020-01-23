@@ -25,11 +25,11 @@ func TestPurchase(t *testing.T) {
 		UrlSuccess:       "https://demo.windcave.com/SandboxSuccess.aspx",
 		UrlFail:          "https://demo.windcave.com/SandboxSuccess.aspx",
 	}
-	test, err := c.CreatePurchase(p)
+	redirecturl, err := c.CreatePurchase(p)
 	if err != nil {
 		t.Errorf("Not expected error for CreatePurchase(), got %s", err.Error())
 	}
-	t.Errorf("Click Link: %s", test)
+	t.Errorf("Click Link: %s", redirecturl)
 }
 
 func TestTranscation(t *testing.T) {
@@ -48,9 +48,9 @@ func TestTranscation(t *testing.T) {
 		Response: "ResponseKEY", // UrlSuccess?result=__Response_Token__
 	}
 
-	test, err := c.ProcessResponse(p)
+	res, err := c.ProcessResponse(p)
 	if err != nil {
 		t.Errorf("Not expected error for ProcessResponse(), got %s", err.Error())
 	}
-	t.Error(test)
+	t.Error(res)
 }
